@@ -43,7 +43,7 @@ if(isset($_POST['btn-signup']))
 			{
 				if($user->register($fname,$lname,$uname,$umail,$upass)) 
 				{
-					$user->redirect('sign-up.php?joined');
+					$user->redirect('signup.php?joined');
 				}
 			}
 		}
@@ -105,7 +105,7 @@ if(isset($_POST['btn-signup']))
 			</button>
 		</div>
 		<br />
-		<label>have an account ! <a href="index.php">Sign In</a></label>
+		<label>Sign in if you have an account already <a href="index.php">Sign In</a></label>
 	</form>
 	</div>
 </div>
