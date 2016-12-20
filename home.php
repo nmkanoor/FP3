@@ -27,10 +27,12 @@ $userRow=$stmt->fetch(PDO::FETCH_ASSOC);
 	<div class="right">
 	<label><a href="logout.php?logout=true"><i class="glyphicon glyphicon-log-out"></i> logout</a></label></div>
 	</div>
+	<div class="right">
+	<label><a href="all_users.php"><i class="glyphicon glyphicon-log-out"></i>See Users</a></label></div>
+	</div>
 </div>
 <div class="content">
 Welcome! <?php print($userRow['user_name']); ?>
 </div>
 </body>
 </html>
-
