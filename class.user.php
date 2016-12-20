@@ -6,16 +6,17 @@ class USER
 	{
 	$this->db = $DB_con;
 	}
-	public function register($fname,$lname,$uname,$umail,$upass)
+	public function register($uname,$umail,$upass)
 	{
 		try
 		{
 			$new_password = password_hash($upass, PASSWORD_DEFAULT);
-			$stmt = $this->db->prepare("INSERT INTO `users`( VALUES(:uname,:umail, :upass)");
-			$stmt->bindparam(":uname", $uname);
-			$stmt->bindparam(":umail", $umail);
-			$stmt->bindparam(":upass", $new_password);
-			$stmt->execute(); 
+
+
+			$sql = "INSERT INTO `users` (user_email,  user_name, user_pass)
+					VALUES (:umail,  :uname, :upass)";
+			$stmt = $this->db->prepare($sql);
+			$stmt->execute(array(':uname'=>$uname, ':umail'=>$umail, ':upass'=>$new_password));
 			return $stmt;
 		}
 		catch(PDOException $e)
@@ -27,7 +28,7 @@ class USER
 	{
 		try
 		{	
-			$stmt = $this->db->prepare("SELECT * FROM users WHERE user_name=:uname OR user_email=:umail LIMIT 1");
+			$stmt = $this->db->prepare("SELECT * FROM `users` WHERE user_name=:uname OR user_email=:umail LIMIT 1");
 			$stmt->execute(array(':uname'=>$uname, ':umail'=>$umail));
 			$userRow=$stmt->fetch(PDO::FETCH_ASSOC);
 			if($stmt->rowCount() > 0)
@@ -67,6 +68,3 @@ class USER
 	}
 }
 ?>
-
-
-
