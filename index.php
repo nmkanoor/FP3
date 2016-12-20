@@ -33,7 +33,7 @@ if(isset($_POST['btn-login']))
 <div class="container">
 	<div class="form-container">
 		<form method="post">
-			<h2>Sign in.</h2><hr />
+			<h2>Sign in Here!</h2><hr />
 			<?php
 			if(isset($error))
 			{
@@ -46,9 +46,11 @@ if(isset($_POST['btn-login']))
 			}
 			?>
 			<div class="form-group">
-				<input type="text" class="form-control" name="txt_uname_email" placeholder="Username or E mail ID" required />
+				<label for="text">Login</label>
+				<input type="text" class="form-control" name="txt_uname_email" placeholder="Username or e-mail ID" required />
 			</div>
 			<div class="form-group">
+				<label for="password">Password</label>
 				<input type="password" class="form-control" name="txt_password" placeholder="Your Password" required />
 			</div>
 			<div class="clearfix"></div><hr />
@@ -58,7 +60,7 @@ if(isset($_POST['btn-login']))
 				</button>
 			</div>
 			</br>
-			<label>Don't have account yet ! <a href="signup.php">Sign Up</a></label>
+			<label>Don't have account yet? <a href="signup.php">Sign Up</a></label>
 		</form>
 		</div>
 </div>
