@@ -67,7 +67,7 @@ if(isset($_POST['btn-signup']))
 <div class="container">
 	<div class="form-container">
 		<form method="post">
-			<h2>Sign up.</h2><hr />
+			<h2>Sign Up Here!</h2><hr />
 			<?php
 			if(isset($error))
 			{
@@ -84,18 +84,21 @@ if(isset($_POST['btn-signup']))
 		{
 			?>
 			<div class="alert alert-info">
-				<i class="glyphicon glyphicon-log-in"></i> &nbsp; Successfully registered <a href='index.php'>login</a>
+				<i class="glyphicon glyphicon-log-in"></i> &nbsp; Successfully registered! <a href='index.php'>login</a>
 			</div>
 			<?php
 		}
 		?>	
 		<div class="form-group">
+		<label for="text">Username:</label>
 		<input type="text" class="form-control" name="txt_uname" placeholder="Enter Username" value="<?php if(isset($error)){echo $uname;}?>" />
 		</div>
 		<div class="form-group">
+		<label for="text">Email:</label>
 		<input type="text" class="form-control" name="txt_umail" placeholder="Enter E-Mail ID" value="<?php if(isset($error)){echo $umail;}?>" />
 		</div>
 		<div class="form-group">
+		<label for="password">Password:</label>
 		<input type="password" class="form-control" name="txt_upass" placeholder="Enter Password" />
 		</div>
 		<div class="clearfix"></div><hr />
@@ -105,7 +108,7 @@ if(isset($_POST['btn-signup']))
 			</button>
 		</div>
 		<br />
-		<label>Sign in if you have an account already <a href="index.php">Sign In</a></label>
+		<label>Already have an account?<a href="index.php">Log In Here!</a></label>
 	</form>
 	</div>
 </div>
