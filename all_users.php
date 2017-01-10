@@ -14,7 +14,6 @@ require_once 'config.php';
 <body>
 <div class="container">
 	<h2>Directory of Users</h2>
-	<p>Usernames and Emails are in the Directory:</p>
 	<table class="table">
 		<thead>
 			<tr>
