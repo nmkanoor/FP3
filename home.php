@@ -32,7 +32,7 @@ $userRow=$stmt->fetch(PDO::FETCH_ASSOC);
 	</div>
 </div>
 <div class="content">
-Welcome, <?php print($userRow['user_name']); ?>! What would you like to do today?
+Welcome <?php print($userRow['user_name']); ?>! What would you like to do today?
 </div>
 </body>
 </html>
